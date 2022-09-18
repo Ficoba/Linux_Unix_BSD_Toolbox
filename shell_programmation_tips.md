@@ -236,7 +236,9 @@ This syntax can avoid a pipe. Example:
 echo "Hey Jude" | grep "Hey"
 ```
 
-# Few commands and/or parameters little known to avoid some pipe
+# Few commands and/or parameters little known to avoid some pipes
+I recommand to use & abuse manpage and/or help command to discover possibilites of each commands used on Linux/Unix/BSD machines!
+
 ## How to generate a sequence number?
 ```bash
 seq 1 3
@@ -309,6 +311,44 @@ cat /var/log/result.log | sort -u
 
 /!\ uniq command does not have a sort in date of 2022-09-18
 
+## Sort versions
+```bash
+sort -V <<<"4.0
+1.0.1
+1.0
+1.0.1a
+1.0.1b
+3
+2.1"
+
+1.0
+1.0.1
+1.0.1a
+1.0.1b
+2.1
+3
+4.0
+
+# Reverse order with -r
+sort -Vr <<<"4.0
+1.0.1
+1.0
+1.0.1a
+1.0.1b
+3
+2.1"
+
+4.0
+3
+2.1
+1.0.1b
+1.0.1a
+1.0.1
+1.0
+```
+
+In my case I use to check versions for example during a script execution if version is higher or under a specific version I use different commands.
+
 ## I need to perform a grep with some patterns
 * In some scripts I see:
 ```bash
@@ -319,7 +359,7 @@ grep -v "info" /var/log/result.log | grep -v "debug"
 grep -v "info\|debug" /var/log/result.log
 ```
 
-You can avoid escape of | (\|) with grep parameter -E
+You can avoid escape of | (\\|) with grep parameter -E
 ```bash
 grep -vE "info|debug" /var/log/result.log
 ```
