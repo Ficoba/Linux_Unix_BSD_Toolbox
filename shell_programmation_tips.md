@@ -1,5 +1,5 @@
-# Variable declaration
-## typeset
+# Variables
+## Explicit declaration with: typeset
 Declare a local variable (useful for functions) and you can set some rules of datatype/format to store values.
 
 ### Store in lowercase
@@ -38,7 +38,7 @@ typeset -i varFloat="Hey Jude"
 Hey Jude: bad number
 ```
 
-# Substition variables
+## Substitions
 There are 4 possibilities:
 1. ${var:-defaultVal}
 * If $var is not empty, return this value
