@@ -1,0 +1,15 @@
+startup_message off
+vbell off
+#termcapinfo xterm ks@:ke@	# Enable keys for numpad (/*-+)
+
+escape ^Ww			# Override Ctrl A by Ctrl W
+
+bindkey ^[[11~ prev		# F1
+bindkey ^[[12~ next		# F2
+bindkey ^[[13~ screen bash	# F3
+bindkey ^[[14~ detach		# F4
+
+screen bash
+title "HOST"
+
+caption always "%{= kw}%-w%{= BW}%n %t%{-}%+w %-= @%H - %LD %d %LM - %c"
