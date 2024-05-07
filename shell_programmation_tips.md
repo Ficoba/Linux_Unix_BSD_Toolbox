@@ -173,6 +173,13 @@ echo "$var"
 defaultVal
 ```
 
+## String replacement
+```bash
+var="Hey Jude"
+echo ${var//Jude/'You!'}
+Hey You!
+```
+
 ## Length of value
 ```bash
 var="Hey Jude"
